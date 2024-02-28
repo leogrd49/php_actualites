@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!doctype HTML>
+<php class="no-js" lang="">
     
 <head>
         <meta charset="utf-8">
@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="site.html">
+        <link rel="manifest" href="site.php">
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="style.css">
@@ -41,13 +41,13 @@
                                 <div class="main-menu red-menu text-center">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li><a href="index.html">Home</a>
+                                            <li><a href="acceuil.php">Home</a>
                                             </li>
                                             <li><a href="#">Pages</a>
                                             </li>
-                                            <li><a href="blog.html">Blog</a>
+                                            <li><a href="#">Blog</a>
                                             </li>
-                                            <li><a href="shop.html">Shop</a>
+                                            <li><a href="#">Shop</a>
                                             </li>
                                         </ul>
                                     </nav>
