@@ -33,6 +33,8 @@ include 'header.php'
 
   <!-- blog-area -->
   <div class="blog-area pos-relative pt-130 pb-130">
+    <div id="centrer">
+
     <div class="container">
       <div class="result">
 
@@ -70,6 +72,7 @@ include 'header.php'
         }
         ?>
 
+      </div>
       </div>
     </div>
   </div>
