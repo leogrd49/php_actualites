@@ -5,17 +5,17 @@ include 'header.php'
             <!-- page-title-area start -->
             <div class="page-title-area pos-relative gray-bg pt-90 pb-60 fix"
                 style="background-image: url(img/bg/page-title-bg.jpg);">
-                <div class="shape-slider">
+                <div class="shape-slIDer">
                     <img class="shape shape-2  " src="img/shape/shape2.png" alt="">
                     <img class="shape shape-4 " src="img/shape/shape3.png" alt="">
                     <img class="shape shape-5 " src="img/shape/shape-sq.png" alt="">
                     <img class="shape shape-6 " src="img/shape/shape-c-2.png" alt="">
                 </div>
                 <div class="container">
-                    <div class="row align-items-center">
+                    <div class="result align-items-center">
                         <div class="col-lg-6">
                             <div class="page-title mb-30">
-                                <h3>Blog/h3>
+                                <h3>Blog</h3>
                                 <p>Le meilleur de l'actualité</p>
                             </div>
                         </div>
@@ -23,7 +23,7 @@ include 'header.php'
                             <div class="breadcrumb-list text-left text-lg-right mb-30">
                                 <ul>
                                     <li><a href="#">Home</a></li>
-                                    <li>BLog Page</li>
+                                    <li>Blog Page</li>
                                 </ul>
                             </div>
                         </div>
@@ -35,153 +35,42 @@ include 'header.php'
             <!-- blog-area -->
             <div class="blog-area pos-relative pt-130 pb-130">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="news-wrapper mb-60">
-                                <div class="news-img">
-                                    <a href="blog-details.html"><img src="img/blog/img1.png" alt=""></a>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-text">
-                                        <div class="blog-meta-top mb-15">
-                                            <span> <a href="#">creative design</a> </span>
-                                            <span>-</span>
-                                            <span><a href="blog-details.html">27 july, 2019</a></span>
-                                        </div>
-                                        <h4><a href="blog-details.html">Morning above after bring earth together
-                                                shall together grass great</a></h4>
-                                        <div class="news-meta">
-                                            <span> <a href="#"><i class="ti-user"></i> De Cock</a> </span>
-                                            <span><a href="blog-details.html"><i class="ti-comment"></i> 02 Comment</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="news-wrapper mb-60">
-                                <div class="news-img">
-                                    <a href="blog-details.html"><img src="img/blog/img2.png" alt=""></a>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-text">
-                                        <div class="blog-meta-top mb-15">
-                                            <span> <a href="#">creative design</a> </span>
-                                            <span>-</span>
-                                            <span><a href="blog-details.html">27 july, 2019</a></span>
-                                        </div>
-                                        <h4><a href="blog-details.html">And divided be and creepeth one creature
-                                                fruit in abundantly lights.</a></h4>
-                                        <div class="news-meta">
-                                            <span> <a href="#"><i class="ti-user"></i> De Cock</a> </span>
-                                            <span><a href="blog-details.html"><i class="ti-comment"></i> 02 Comment</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="news-wrapper mb-60">
-                                <div class="news-img">
-                                    <a href="blog-details.html"><img src="img/blog/img3.jpg" alt=""></a>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-text">
-                                        <div class="blog-meta-top mb-15">
-                                            <span> <a href="#">creative design</a> </span>
-                                            <span>-</span>
-                                            <span><a href="blog-details.html">27 july, 2019</a></span>
-                                        </div>
-                                        <h4><a href="blog-details.html">Morning above after bring earth together
-                                                shall together grass great</a></h4>
-                                        <div class="news-meta">
-                                            <span> <a href="#"><i class="ti-user"></i> De Cock</a> </span>
-                                            <span><a href="blog-details.html"><i class="ti-comment"></i> 02 Comment</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="news-wrapper mb-60">
-                                <div class="news-img">
-                                    <a href="blog-details.html"><img src="img/blog/img4.jpg" alt=""></a>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-text">
-                                        <div class="blog-meta-top mb-15">
-                                            <span> <a href="#">creative design</a> </span>
-                                            <span>-</span>
-                                            <span><a href="blog-details.html">27 july, 2019</a></span>
-                                        </div>
-                                        <h4><a href="blog-details.html">And divided be and creepeth one creature
-                                                fruit in abundantly lights.</a></h4>
-                                        <div class="news-meta">
-                                            <span> <a href="#"><i class="ti-user"></i> De Cock</a> </span>
-                                            <span><a href="blog-details.html"><i class="ti-comment"></i> 02 Comment</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="news-wrapper mb-60">
-                                <div class="news-img">
-                                    <a href="blog-details.html"><img src="img/blog/img5.jpg" alt=""></a>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-text">
-                                        <div class="blog-meta-top mb-15">
-                                            <span> <a href="#">creative design</a> </span>
-                                            <span>-</span>
-                                            <span><a href="blog-details.html">27 july, 2019</a></span>
-                                        </div>
-                                        <h4><a href="blog-details.html">And divided be and creepeth one creature
-                                                fruit in abundantly lights.</a></h4>
-                                        <div class="news-meta">
-                                            <span> <a href="#"><i class="ti-user"></i> De Cock</a> </span>
-                                            <span><a href="blog-details.html"><i class="ti-comment"></i> 02 Comment</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="news-wrapper mb-60">
-                                <div class="news-img">
-                                    <a href="blog-details.html"><img src="img/blog/img6.jpg" alt=""></a>
-                                </div>
-                                <div class="news-box">
-                                    <div class="news-text">
-                                        <div class="blog-meta-top mb-15">
-                                            <span> <a href="#">creative design</a> </span>
-                                            <span>-</span>
-                                            <span><a href="blog-details.html">27 july, 2019</a></span>
-                                        </div>
-                                        <h4><a href="blog-details.html">And divided be and creepeth one creature
-                                                fruit in abundantly lights.</a></h4>
-                                        <div class="news-meta">
-                                            <span> <a href="#"><i class="ti-user"></i> De Cock</a> </span>
-                                            <span><a href="blog-details.html"><i class="ti-comment"></i> 02 Comment</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="basic-pagination basic-pagination-2 text-center mt-20">
-                                <ul>
-                                    <li><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
-                                    <li><a href="#">01</a></li>
-                                    <li class="active"><a href="#">02</a></li>
-                                    <li><a href="#">03</a></li>
-                                    <li><a href="#"><i class="fas fa-ellipsis-h"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="result">
+
+            <?php
+            include 'connect_base.php';
+
+            // Requête pour récupérer les articles
+            $query = "SELECT * FROM article ORDER BY date_rev DESC";
+            $stmt = $pdo->query($query);
+
+            // Afficher les articles
+            while ($result = $stmt->fetch()) {
+                echo '<div class="col-lg-6 col-md-6">';
+                echo '<div class="news-wrapper mb-60">';
+                echo '<div class="news-img">';
+                echo '<a href="actu.php?ID='.$result["ID"].'"><img src=" ' . $result['image'] . '" alt=""></a>';
+                echo '</div>';
+                echo '<div class="news-box">';
+                echo '<div class="news-text">';
+                echo '<div class="blog-meta-top mb-15">';
+                echo '<span><a href="actu.php?ID='.$result["ID"].'">' . $result['date_rev'] .' </a></span>';
+                echo '</div>';
+                echo '<h4><a href="actu.php?ID='.$result["ID"].'">' . $result['titre'] . '</a></h4>';
+                echo '<div class="news-meta">';
+                echo '<span> <a href="#"><i class="ti-user"></i> ' . $result['auteur'] . '</a> </span>';
+                echo '<span><a href="actu.php?ID='.$result["ID"].'"><i class="bx bx-purchase-tag-alt"></i>' . $result['tags'] . ' </a></span>';
+                echo "<p>Date de publication: " . $result['date_pub'] . "</p>";
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div>';
+                echo '</div>';
+            }
+            ?>
+
                     </div>
                 </div>
             </div>

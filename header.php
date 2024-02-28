@@ -10,6 +10,9 @@
 
         <link rel="manifest" href="site.html">
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style.css">
+
 
 		<!-- CSS here -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
