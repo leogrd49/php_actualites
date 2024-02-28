@@ -1,2 +1,28 @@
-.container{
+
+.conatct-post-form {
+    margin-bottom: 20px;
+    padding: 50px 35px;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.09);
+    width: 75%;
+    margin-left: 12%;
+}
+
+#conatct-form {
+    margin-bottom: 20px;
+    padding: 50px 35px;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.09);
+    width: 75%;
+    margin-left: 12%;
+}
+
+form{
+    margin-bottom: 20px;
+    padding: 50px 35px;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,.09);
+    width: 75%;
+    margin-left: 12%;
+}
+
+.post-comments-title{
+    margin-left: 12%;
 }
