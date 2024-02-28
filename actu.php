@@ -1,4 +1,5 @@
 <?php
+include "header.php";
 include "connect_base.php";
 
 $id = $_REQUEST["ID"];
@@ -16,3 +17,4 @@ echo "<h1> " . $result['source'] . "</h1>";
 echo "<img src=" . $result['image'] . " alt='image'>";
 echo "<h1> " . $result['corp'] . "</h1>";
 
+include "footer.php";
