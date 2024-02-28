@@ -17,4 +17,12 @@ echo "<h1> " . $result['source'] . "</h1>";
 echo "<img src=" . $result['image'] . " alt='image'>";
 echo "<h1> " . $result['corp'] . "</h1>";
 
+?>
+
+<button class="richblue">
+    <a href="accueil.php">Go back home</a>
+</button>
+
+<?php
+
 include "footer.php";

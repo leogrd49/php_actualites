@@ -75,35 +75,37 @@ include 'header.php'
   </div>
   <!-- blog-area end -->
 
+
+
   <div class="post-comments-form">
     <div class="post-comments-title">
       <h2>Contactez Nous</h2>
     </div>
-    <form id="contacts-form" class="conatct-post-form" action="#">
+    <form id="contacts-form" class="conatct-post-form" action="send_email.php" method="post">
       <div class="row">
         <div class="col-xl-6">
           <div class="contact-icon">
             <label>Notre nom*</label>
-            <input type="text" required>
+            <input type="text" name="nom" required>
           </div>
         </div>
         <div class="col-xl-6">
           <div class="contact-icon">
             <label>Votre email*</label>
-            <input type="email" required>
+            <input type="email" name="email" required>
           </div>
         </div>
         <div class="col-xl-12">
           <div class="contact-icon">
             <label>Votre commentaire*</label>
-            <textarea name="comments" id="comments" cols="30" rows="10"></textarea required>
-                </div>
-            </div>
-            <div class="col-xl-12">
-                <button class="x-btn theme-btn" type="submit">Envoyer</button>
-              </div>
+            <textarea name="commentaire" id="commentaire" cols="30" rows="10" required></textarea>
           </div>
-      </form>
+        </div>
+        <div class="col-xl-12">
+          <button class="x-btn theme-btn" type="submit">Envoyer</button>
+        </div>
+      </div>
+    </form>
   </div>
 </main>
 

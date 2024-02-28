@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 28 fév. 2024 à 13:58
+-- Généré le : mer. 28 fév. 2024 à 15:14
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.3.0
 
@@ -50,6 +50,29 @@ INSERT INTO `article` (`ID`, `titre`, `auteur`, `date_pub`, `date_rev`, `tags`, 
 (2, 'Comment faire Top 1', 'Talmo', '2024-02-01', '2024-02-27', 'fortnite, Top1, Neuille', 'Twitch', 'https://i0.wp.com/www.seroths.com/wp-content/uploads/2019/01/maxresdefault-79.jpg?resize=1280%2C500&ssl=1', 'Il faut simplement tué tout le monde.'),
 (3, 'Testfrrr', 'Testfrr', '2014-02-10', '2022-02-17', 'oui, baguette, test', 'Testfr', 'https://i.notretemps.com/1800x0/smart/2020/11/13/covid-19-les-tests-antigeniques-quel-interet.jpeg', 'testttttttttttttttttttttfr'),
 (4, 'Test', 'Test', '2014-02-28', '2027-02-10', 'oui, baguette, test', 'Test', 'https://www.cloudnetcare.fr/wp-content/uploads/2022/06/les-differents-types-de-test-d-un-logiciel.webp', 'testtttttttttttttttttttt');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `formulaire_contact`
+--
+
+DROP TABLE IF EXISTS `formulaire_contact`;
+CREATE TABLE IF NOT EXISTS `formulaire_contact` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `commentaire` text NOT NULL,
+  `date_creation` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `formulaire_contact`
+--
+
+INSERT INTO `formulaire_contact` (`id`, `nom`, `email`, `commentaire`, `date_creation`) VALUES
+(1, 'test', 'test@test.fr', 'coucou test', '2024-02-28 15:09:14');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
