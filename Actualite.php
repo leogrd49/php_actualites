@@ -24,6 +24,7 @@
 
         public function gettitre() :string
         {
+            
             return $this -> titre;
         }
 

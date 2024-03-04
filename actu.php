@@ -1,6 +1,8 @@
 <?php
-include "header.php";
-include "connect_base.php";
+require_once "header.php";
+require_once "connect_base.php";
+require_once 'Actualite.php';
+
 
 $id = $_REQUEST["ID"];
 
@@ -8,14 +10,17 @@ $requestSQL = "SELECT * FROM article WHERE ID = ".$id." " ;
 $stmt = $pdo->query($requestSQL);
 $result = $stmt->fetch();
 
-echo "<h1> " . $result['titre'] . "</h1>";
-echo "<h1> " . $result['auteur'] . "</h1>";
-echo "<h1> " . $result['date_pub'] . "</h1>";
-echo "<h1> " . $result['date_rev'] . "</h1>";
-echo "<h1> " . $result['tags'] . "</h1>";
-echo "<h1> " . $result['source'] . "</h1>";
-echo "<img src=" . $result['image'] . " alt='image'>";
-echo "<h1> " . $result['corp'] . "</h1>";
+$actualite = new Actualite($result['titre'], $result['auteur'], $result['date_pub'], $result['date_rev'], $result['source'], $result['image'], $result['corp'], $result['tags']);
+
+
+echo "<h1> " . $actualite->gettitre() . "</h1>";
+echo "<h1> " . $actualite->getauteur() . "</h1>";
+echo "<h1> " . $actualite->getdate_pub() . "</h1>";
+echo "<h1> " . $actualite->getdate_rev() . "</h1>";
+echo "<h1> " . $actualite->gettags() . "</h1>";
+echo "<h1> " . $actualite->getsource() . "</h1>";
+echo "<img src=" . $actualite->getimage() . " alt='image'>";
+echo "<h1> " . $actualite->getcorp() . "</h1>";
 
 ?>
 
@@ -25,4 +30,4 @@ echo "<h1> " . $result['corp'] . "</h1>";
 
 <?php
 
-include "footer.php";
+require_once "footer.php";

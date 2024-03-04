@@ -1,5 +1,6 @@
 <?php
-require_once 'header.php'
+require_once 'header.php';
+require_once 'Actualite.php';
 ?>
 <main>
   <!-- page-title-area start -->
@@ -47,21 +48,26 @@ require_once 'header.php'
 
         // Afficher les articles
         while ($result = $stmt->fetch()) {
+
+        // Declaration de la Class Actualite
+        $actualite = new Actualite($result['titre'], $result['auteur'], $result['date_pub'], $result['date_rev'], $result['source'], $result['image'], $result['corp'], $result['tags']);
+
+
           echo '<div class="col-lg-6 col-md-6">';
           echo '<div class="news-wrapper mb-60">';
           echo '<div class="news-img">';
-          echo '<a href="actu.php?ID=' . $result["ID"] . '"><img src=" ' . $result['image'] . '" alt=""></a>';
+          echo '<a href="actu.php?ID=' . $result["ID"] . '"><img src=" ' . $actualite->getimage() . '" alt=""></a>';
           echo '</div>';
           echo '<div class="news-box">';
           echo '<div class="news-text">';
           echo '<div class="blog-meta-top mb-15">';
-          echo '<span><a href="actu.php?ID=' . $result["ID"] . '">' . $result['date_rev'] . ' </a></span>';
+          echo '<span><a href="actu.php?ID=' . $result["ID"] . '">' . $actualite->getdate_rev() . ' </a></span>';
           echo '</div>';
-          echo '<h4><a href="actu.php?ID=' . $result["ID"] . '">' . $result['titre'] . '</a></h4>';
+          echo '<h4><a href="actu.php?ID=' . $result["ID"] . '">' . $actualite->gettitre() . '</a></h4>';
           echo '<div class="news-meta">';
-          echo '<span> <a href="#"><i class="ti-user"></i> ' . $result['auteur'] . '</a> </span>';
-          echo '<span><a href="actu.php?ID=' . $result["ID"] . '"><i class="bx bx-purchase-tag-alt"></i>' . $result['tags'] . ' </a></span>';
-          echo "<p>Date de publication: " . $result['date_pub'] . "</p>";
+          echo '<span> <a href="#"><i class="ti-user"></i> ' . $actualite->getauteur() . '</a> </span>';
+          echo '<span><a href="actu.php?ID=' . $result["ID"] . '"><i class="bx bx-purchase-tag-alt"></i>' . $actualite->gettags() . ' </a></span>';
+          echo "<p>Date de publication: " .  $actualite->getdate_pub() . "</p>";
           echo '</div>';
           echo '</div>';
           echo '</div>';
@@ -78,16 +84,7 @@ require_once 'header.php'
   </div>
 
 
-  <div id="test-object">
-        <?php
-        $actualite = new Actualite('Mon super titre' , 'aaaaaaaa', 'bbbbb', 'cccccc', 'ddddd', 'eeeeee', 'ffffffff', 'gggg')
-        ?>
 
-        <p>
-          <a href="#"><?= $actualite->gettitre() ?></a>
-        </p>
-
-  </div>
   <!-- blog-area end -->
 
 
