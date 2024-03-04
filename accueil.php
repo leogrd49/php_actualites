@@ -1,5 +1,5 @@
 <?php
-include 'header.php'
+require_once 'header.php'
 ?>
 <main>
   <!-- page-title-area start -->
@@ -75,6 +75,18 @@ include 'header.php'
       </div>
       </div>
     </div>
+  </div>
+
+
+  <div id="test-object">
+        <?php
+        $actualite = new Actualite('Mon super titre' , 'aaaaaaaa', 'bbbbb', 'cccccc', 'ddddd', 'eeeeee', 'ffffffff', 'gggg')
+        ?>
+
+        <p>
+          <a href="#"><?= $actualite->gettitre() ?></a>
+        </p>
+
   </div>
   <!-- blog-area end -->
 
