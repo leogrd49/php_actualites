@@ -1,8 +1,7 @@
 <?php
 require_once "header.php";
 require_once "connect_base.php";
-require_once 'Actualite.php';
-
+require_once 'Controllers/Actualite.php';
 
 $id = $_REQUEST["ID"];
 

@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require_once 'Actualite.php';
+require_once 'Controllers/Actualite.php';
 ?>
 <main>
   <!-- page-title-area start -->
@@ -39,44 +39,43 @@ require_once 'Actualite.php';
     <div class="container">
       <div class="result">
 
-        <?php
-        include 'connect_base.php';
+      <?php
+      include 'connect_base.php';
 
-        // Requête pour récupérer les articles
-        $query = "SELECT * FROM article ORDER BY date_rev DESC";
-        $stmt = $pdo->query($query);
+      // Requête pour récupérer les articles
+      $query = "SELECT * FROM article ORDER BY date_rev DESC";
+      $stmt = $pdo->query($query);
 
-        // Afficher les articles
-        while ($result = $stmt->fetch()) {
+      // Afficher les articles
+      while ($result = $stmt->fetch()) {
+          // Declaration de la Class Actualite
+          $actualite = new Actualite($result['titre'], $result['auteur'], $result['date_pub'], $result['date_rev'], $result['source'], $result['image'], $result['corp'], $result['tags']);
+      ?>
 
-        // Declaration de la Class Actualite
-        $actualite = new Actualite($result['titre'], $result['auteur'], $result['date_pub'], $result['date_rev'], $result['source'], $result['image'], $result['corp'], $result['tags']);
+          <div class="col-lg-6 col-md-6">
+              <div class="news-wrapper mb-60">
+                  <div class="news-img">
+                      <a href="actu.php?ID=<?= $result["ID"] ?>"><img src="<?= $actualite->getimage() ?>" alt=""></a>
+                  </div>
+                  <div class="news-box">
+                      <div class="news-text">
+                          <div class="blog-meta-top mb-15">
+                              <span><a href="actu.php?ID=<?= $result["ID"] ?>"><?= $actualite->getdate_rev() ?></a></span>
+                          </div>
+                          <h4><a href="actu.php?ID=<?= $result["ID"] ?>"><?= $actualite->gettitre() ?></a></h4>
+                          <div class="news-meta">
+                              <span><a href="#"><i class="ti-user"></i> <?= $actualite->getauteur() ?></a></span>
+                              <span><a href="actu.php?ID=<?= $result["ID"] ?>"><i class="bx bx-purchase-tag-alt"></i><?= $actualite->gettags() ?></a></span>
+                              <p>Date de publication: <?= $actualite->getdate_pub() ?></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-
-          echo '<div class="col-lg-6 col-md-6">';
-          echo '<div class="news-wrapper mb-60">';
-          echo '<div class="news-img">';
-          echo '<a href="actu.php?ID=' . $result["ID"] . '"><img src=" ' . $actualite->getimage() . '" alt=""></a>';
-          echo '</div>';
-          echo '<div class="news-box">';
-          echo '<div class="news-text">';
-          echo '<div class="blog-meta-top mb-15">';
-          echo '<span><a href="actu.php?ID=' . $result["ID"] . '">' . $actualite->getdate_rev() . ' </a></span>';
-          echo '</div>';
-          echo '<h4><a href="actu.php?ID=' . $result["ID"] . '">' . $actualite->gettitre() . '</a></h4>';
-          echo '<div class="news-meta">';
-          echo '<span> <a href="#"><i class="ti-user"></i> ' . $actualite->getauteur() . '</a> </span>';
-          echo '<span><a href="actu.php?ID=' . $result["ID"] . '"><i class="bx bx-purchase-tag-alt"></i>' . $actualite->gettags() . ' </a></span>';
-          echo "<p>Date de publication: " .  $actualite->getdate_pub() . "</p>";
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-          echo '<div>';
-          echo '</div>';
-        }
-        ?>
+      <?php
+      }
+      ?>
 
       </div>
       </div>
