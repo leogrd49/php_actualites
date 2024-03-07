@@ -4,11 +4,11 @@
         public $email;
         public $commentaire;
 
-        public function __construct(string $nom, string $email, string $commentaire)
+        public function __construct(array $data)
         {
-            $this -> nom = $nom;
-            $this -> email = $email;
-            $this -> commentaire = $commentaire;
+            $this -> nom = $data['nom'];
+            $this -> email = $data['email'];
+            $this -> commentaire = $data['commentaire'];
          
         }
 
@@ -28,4 +28,3 @@
             return $this -> commentaire;
         }
     }
-?>

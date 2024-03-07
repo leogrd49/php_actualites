@@ -1,6 +1,6 @@
 <?php
-require_once 'header.php';
-require_once 'Controllers/Actualite.php';
+require_once '../root/require.php';
+
 ?>
 <main>
   <!-- page-title-area start -->
@@ -40,8 +40,6 @@ require_once 'Controllers/Actualite.php';
       <div class="result">
 
       <?php
-      include 'connect_base.php';
-
       // Requête pour récupérer les articles
       $query = "SELECT * FROM article ORDER BY date_rev DESC";
       $stmt = $pdo->query($query);
@@ -49,7 +47,8 @@ require_once 'Controllers/Actualite.php';
       // Afficher les articles
       while ($result = $stmt->fetch()) {
           // Declaration de la Class Actualite
-          $actualite = new Actualite($result['titre'], $result['auteur'], $result['date_pub'], $result['date_rev'], $result['source'], $result['image'], $result['corp'], $result['tags']);
+          // $actualite = new Actualite($result['titre'], $result['auteur'], $result['date_pub'], $result['date_rev'], $result['source'], $result['image'], $result['corp'], $result['tags']);
+          $actualite = new Actualite($result);
       ?>
 
           <div class="col-lg-6 col-md-6">

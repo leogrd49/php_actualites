@@ -9,17 +9,17 @@
         public $corp;
         public $tags;
 
-
-        public function __construct(string $titre, string $auteur, string $date_pub, string $date_rev, string $source, string $image, string $corp, string $tags)
+        public function __construct(array $data) {
         {
-            $this -> titre = $titre;
-            $this -> auteur = $auteur;
-            $this -> date_pub = $date_pub;
-            $this -> date_rev = $date_rev;
-            $this -> source = $source;
-            $this -> image = $image;
-            $this -> corp = $corp;
-            $this -> tags = $tags;            
+            $this -> titre = $data['titre'];
+            $this -> auteur = $data['auteur'];
+            $this -> date_pub = $data['date_pub'];
+            $this -> date_rev = $data['date_rev'];
+            $this -> source = $data['source'];
+            $this -> image = $data['image'];
+            $this -> corp = $data['corp'];
+            $this -> tags = $data['tags'];            
+        }
         }
 
         public function gettitre() :string
@@ -63,4 +63,3 @@
             return $this -> tags;
         }
     }
-?>
