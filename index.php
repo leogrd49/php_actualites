@@ -26,19 +26,14 @@ session_start();
     <div class="menu-header">
     <nav>
     <?php
-    // Créer une instance de la classe Menu pour récupérer les catégories
     $menu = new Menu();
-    // Récupérer les catégories
     $categories = $menu->getCategories();
 
-    // Parcourir les catégories
     foreach ($categories as $category) {
-        // Afficher le lien de la catégorie
         echo '<a href="#">' . $category['nom'] . '</a>';
-
-        // Générer le select des sous-catégories pour cette catégorie
+    
         $subCategories = $menu->getSubCategories($category['id']);
-        echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '">';
+        echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '" onchange="redirect(this)">';
         echo '<option value="">Sous-menu</option>';
         foreach ($subCategories as $subCategory) {
             echo '<option value="' . $subCategory['id'] . '">' . $subCategory['nom'] . '</option>';
@@ -46,7 +41,18 @@ session_start();
         echo '</select>';
     }
     ?>
-    </nav>
+
+    <script>
+    function redirect(select) {
+        var categoryId = select.id.replace('submenu', '');
+        var selectedOption = select.options[select.selectedIndex];
+        var subCategoryId = selectedOption.value;
+        if (subCategoryId !== '') {
+            window.location.href = 'admin.php?category=' + categoryId + '&subcategory=' + subCategoryId;
+        }
+    }
+    </script>
+</nav>
     </div>
     </header>  
     <br/>
