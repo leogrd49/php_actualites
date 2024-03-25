@@ -1,0 +1,255 @@
+html{
+    background-color: #FFFFFF;
+}
+
+/*HEADER*/
+
+header{
+    display: grid;
+    grid-template-columns: calc(100%/3);
+    background-color: #FFF;
+    border: 0 solid;
+    border-radius: 30px;
+    overflow: hidden;
+    color: #00171F;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo-header img{
+    width: 150px;
+    margin-top: 15px;
+    margin-left: 50%;
+}
+
+.titre-header{
+    grid-column: 2 / span 1;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titre-header h1{
+    font-size: 50px;
+}
+
+.titre-header p{
+    font-size: 30px;
+}
+
+.menu-header{
+    grid-column: 3 / span 1;
+    margin: 0 auto;
+    font-size: 25px;
+    margin-top: 80px;
+}
+
+.menu-header a{
+    text-decoration: none;
+    color: #FFFFFF;
+    border: 0 solid;
+    padding: 5px 15px;
+    background-color: #a10606;
+    border-radius: 10px;
+}
+
+.menu-header a:hover{
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+/*Home*/
+
+.validation{
+    border-radius: 15px;
+    background-color: yellow;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/fond.jpg');
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.carte-article{
+    background-color: #FFFFFF;
+    width: 850px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 17.5px;
+    margin-bottom: 17.5px;
+    border: 0 solid;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.carte-article:hover{
+    box-shadow: 5px 5px 30px 5px grey;
+}
+
+.titre-carte{
+    color: #000000;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 30px;
+    grid-column: 1 / span 2;
+}
+
+.image-carte{
+    margin-left: 80px;
+    border-radius: 10px;
+    grid-column: 1 / span 1;
+    margin-top: 15px;
+    width: 300px;
+}
+
+.desc-article{
+    grid-column: 2 / span 1;
+    background-color: #a10606;
+    color: #FFFFFF;
+    border-radius: 15px;
+    margin-bottom: 100px;
+    margin-right: 80px;
+}
+
+.date-publication,
+.auteur-article,
+.tags-article{
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+/*ARTICLE*/
+
+.content{
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.titre-auteur{
+    margin: 0 auto;
+    font-size: 40px;
+    margin-top: 25px;
+    grid-column: 1 / span 2 ;
+}
+
+.img{
+    width: 500px;
+    margin-left: 25px;
+    margin-top: 70px;
+    border-radius: 15px;
+    grid-column: 1 / span 1;
+}
+
+.a-droite{
+    grid-column: 2 / span 1;
+}
+
+.content-article{
+    font-size: 30px;
+    margin-top: 70px;
+    margin-right: 25px;
+}
+
+.infos-supplementaires{
+    grid-column: 1 / span 1;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dates,
+.tags,
+.source{
+    font-size: 18px;
+}
+
+.retour-container{
+    grid-column: 2 / span 1;
+    margin-left: 1000px;
+    margin-top: 130px;
+}
+
+.bouton-retour{
+    color: #000000;
+    font-size: 25px;
+    margin: 0 auto;
+    background-color: #B8B4B0;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+/*CONTACT*/
+
+.form-container{
+    width: 300px;
+    text-align: center;
+    background-color: #B8B4B0;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    border-radius: 30px;
+}
+
+.titre-formulaire{
+    font-size: 35px;
+}
+
+.input-box{
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+.submit-bouton{
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #FFF;
+    margin-top: 15px;
+    height: 200px;
+    border-radius: 30px;
+    overflow: hidden;
+    color: #00171F;
+}
+
+footer iframe{
+    margin-top: 5px;
+    margin-left: 20%;
+    border-radius: 15px;
+}
+
+.autre-liens-footer{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 45%;
+    margin-top: 2%;
+}
+
+.autre-liens-footer a{
+    margin-top: 15px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+}
+
+.autre-liens-footer a:hover{
+    text-decoration: underline;
+}
+
+.autre-liens-footer img{
+    width: 50px;
+    margin: 0 auto;
+}
