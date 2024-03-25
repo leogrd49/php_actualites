@@ -4,58 +4,58 @@ include "include/connexion_base.php";
 require_once "classes/Actualite.php";
 require_once "classes/Menu.php";
 
-
-
 session_start();
-    $actualite = Actualite::getListe();
+$actualite = Actualite::getListe();
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\styles.css">
     <title>BLOG PHP - Objet</title>
 </head>
+
 <body>
     <header>
-        <?php include 'include/html/header.html';?>
-        
-    <div class="menu-header">
-    <nav>
-    <?php
-    $menu = new Menu();
-    $categories = $menu->getCategories();
+        <?php include 'include/html/header.html'; ?>
 
-    foreach ($categories as $category) {
-        echo '<a href="#">' . $category['nom'] . '</a>';
-    
-        $subCategories = $menu->getSubCategories($category['id']);
-        echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '" onchange="redirect(this)">';
-        echo '<option value="">Sous-menu</option>';
-        foreach ($subCategories as $subCategory) {
-            echo '<option value="' . $subCategory['id'] . '">' . $subCategory['nom'] . '</option>';
-        }
-        echo '</select>';
-    }
-    ?>
+        <div class="menu-header">
+            <nav>
+                <?php
+                $menu = new Menu();
+                $categories = $menu->getCategories();
 
-    <script>
-    function redirect(select) {
-        var categoryId = select.id.replace('submenu', '');
-        var selectedOption = select.options[select.selectedIndex];
-        var subCategoryId = selectedOption.value;
-        if (subCategoryId !== '') {
-            window.location.href = 'admin.php?category=' + categoryId + '&subcategory=' + subCategoryId;
-        }
-    }
-    </script>
-</nav>
-    </div>
-    </header>  
-    <br/>
+                foreach ($categories as $category) {
+                    echo '<a href="#">' . $category['nom'] . '</a>';
+
+                    $subCategories = $menu->getSubCategories($category['id']);
+                    echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '" onchange="redirect(this)">';
+                    echo '<option value="">Sous-menu</option>';
+                    foreach ($subCategories as $subCategory) {
+                        echo '<option value="' . $subCategory['id'] . '">' . $subCategory['nom'] . '</option>';
+                    }
+                    echo '</select>';
+                }
+                ?>
+
+                <script>
+                    function redirect(select) {
+                        var categoryId = select.id.replace('submenu', '');
+                        var selectedOption = select.options[select.selectedIndex];
+                        var subCategoryId = selectedOption.value;
+                        if (subCategoryId !== '') {
+                            window.location.href = 'admin.php?category=' + categoryId + '&subcategory=' + subCategoryId;
+                        }
+                    }
+                </script>
+            </nav>
+        </div>
+    </header>
+    <br />
     <main>
         <?php foreach ($actualite as $article) { ?>
             <a href="article.php?id=<?= $article->id ?>">
@@ -73,7 +73,8 @@ session_start();
     </main>
 
     <footer>
-        <?php include 'include/html/footer.html';?>
+        <?php include 'include/html/footer.html'; ?>
     </footer>
 </body>
+
 </html>

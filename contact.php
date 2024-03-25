@@ -22,15 +22,17 @@ if (isset($_POST['soumettre'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\styles.css">
     <title>Contact</title>
 </head>
+
 <body>
     <header>
-        <?php include 'include/html/header.html';?>
+        <?php include 'include/html/header.html'; ?>
     </header>
     <main>
         <div class="form-container">
@@ -49,7 +51,8 @@ if (isset($_POST['soumettre'])) {
         </div>
     </main>
     <footer>
-        <?php include 'include/html/footer.html';?>
+        <?php include 'include/html/footer.html'; ?>
     </footer>
 </body>
+
 </html>

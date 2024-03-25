@@ -2,7 +2,8 @@
 
 require_once "Connexionbdd.php";
 
-class Actualite extends Connexionbdd{
+class Actualite extends Connexionbdd
+{
     public $id;
     public $titre;
     public $corps_texte;
@@ -14,7 +15,8 @@ class Actualite extends Connexionbdd{
     public $sources;
 
 
-    public function __construct(array $values){
+    public function __construct(array $values)
+    {
 
         $this->id = $values['id_article'];
         $this->titre = $values['titre'];
@@ -25,30 +27,31 @@ class Actualite extends Connexionbdd{
         $this->auteur = $values['auteur'];
         $this->tags = $values['tags'];
         $this->sources = $values['sources'];
-                                
     }
 
-    
 
-    public static function getListe(){
+
+    public static function getListe()
+    {
 
         $sql = 'SELECT * FROM article ORDER BY date_revision LIMIT 5';
         $temp = Connexionbdd::getPdo()->prepare($sql);
         $temp->execute();
-    
+
         $data = $temp->fetchAll(PDO::FETCH_ASSOC);
-    
+
         $actualites = [];
-    
+
         foreach ($data as $values) {
             $actualites[] = new Actualite($values);
         }
-    
+
         return $actualites;
     }
 
-    public static function getArticle() {
-        
+    public static function getArticle()
+    {
+
         $actualites = [];
 
         if (isset($_GET['id'])) {
