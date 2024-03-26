@@ -51,4 +51,31 @@ class Menu extends Connexionbdd
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getAllCategorie()
+    {
+        $db = $this->getPdo();
+
+        $query = "SELECT id, nom FROM categorie" ;
+        $statement = $db->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+    public function afficherMenu(){
+        $menu = new Menu();
+
+        $categories = $menu->getCategories();
+        foreach ($categories as $category) {
+            echo '<a href="#">' . $category['nom'] . '</a>';
+
+            $subCategories = $menu->getSubCategories($category['id']);
+            echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '" onchange="redirect(this)">';
+            echo '<option value="">Sous-menu</option>';
+            foreach ($subCategories as $subCategory) {
+                echo '<option value="' . $subCategory['id'] . '">' . $subCategory['nom'] . '</option>';
+            }
+            echo '</select>';
+        }
+    }
 }

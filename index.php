@@ -1,8 +1,8 @@
 <?php
 
 include "include/connexion_base.php";
-require_once "classes/Actualite.php";
-require_once "classes/Menu.php";
+require_once "Class/Actualite.php";
+require_once "Class/Menu.php";
 
 session_start();
 $actualite = Actualite::getListe();
@@ -27,21 +27,8 @@ $actualite = Actualite::getListe();
             <nav>
                 <?php
                 $menu = new Menu();
-                $categories = $menu->getCategories();
-
-                foreach ($categories as $category) {
-                    echo '<a href="#">' . $category['nom'] . '</a>';
-
-                    $subCategories = $menu->getSubCategories($category['id']);
-                    echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '" onchange="redirect(this)">';
-                    echo '<option value="">Sous-menu</option>';
-                    foreach ($subCategories as $subCategory) {
-                        echo '<option value="' . $subCategory['id'] . '">' . $subCategory['nom'] . '</option>';
-                    }
-                    echo '</select>';
-                }
+                $menu->afficherMenu();
                 ?>
-
                 <script>
                     function redirect(select) {
                         var categoryId = select.id.replace('submenu', '');

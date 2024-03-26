@@ -18,6 +18,16 @@ a{
     text-decoration: none;
 }
 
+table{
+    text-align: center;
+    margin-left: 30%;
+}
+
+.add{
+    margin-left: 30%;
+
+}
+
 .logo-header img{
     width: 150px;
     margin-top: 15px;
