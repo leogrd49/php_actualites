@@ -8,7 +8,7 @@ class Admin extends Connexionbdd {
     public function __construct() {
     }
 
-    public static function modifierCategorie($id, $nouveauNom) {
+    public static function modifierCategorie($nouveauNom, $id) {
         $pdo = self::getPdo();
         
         $stmt = $pdo->prepare("UPDATE categorie SET nom = :nouveauNom WHERE id = :id");

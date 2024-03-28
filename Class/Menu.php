@@ -64,18 +64,31 @@ class Menu extends Connexionbdd
 
     public function afficherMenu(){
         $menu = new Menu();
-
         $categories = $menu->getCategories();
+    
+        echo '<nav>';
+        echo '<ul class="nav">';
+        
         foreach ($categories as $category) {
+            echo '<li>';
             echo '<a href="#">' . $category['nom'] . '</a>';
-
+            
             $subCategories = $menu->getSubCategories($category['id']);
-            echo '<select name="Submenu' . $category['id'] . '" id="submenu' . $category['id'] . '" onchange="redirect(this)">';
-            echo '<option value="">Sous-menu</option>';
-            foreach ($subCategories as $subCategory) {
-                echo '<option value="' . $subCategory['id'] . '">' . $subCategory['nom'] . '</option>';
+            if (!empty($subCategories)) {
+                echo '<ul class="subnav">';
+                foreach ($subCategories as $subCategory) {
+                    echo '<li><a href="page_menu.php?id=' . $subCategory['id'] . '">' . $subCategory['nom'] . '</a></li>';
+                }
+                echo '</ul>';
             }
-            echo '</select>';
+            
+            echo '</li>';
         }
+    
+        echo '</ul>';
+        echo '</nav>';
     }
+    
+
+    
 }

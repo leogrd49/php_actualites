@@ -6,7 +6,7 @@
 </head>
 
 <?php 
-include 'include/html/header.html'; 
+require_once 'include\header.php';
 
 require_once "Class/Connexionbdd.php";
 require_once "Class/Admin.php";
@@ -82,5 +82,5 @@ $categories = $menu->getAllCategorie();
 ?>
 
 <footer>
-    <?php include 'include/html/footer.html'; ?>
+    <?php require_once 'include\footer.php'; ?>
 </footer>

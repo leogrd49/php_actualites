@@ -32,7 +32,7 @@ if (isset($_POST['soumettre'])) {
 
 <body>
     <header>
-        <?php include 'include/html/header.html'; ?>
+        <?php require_once 'include\header.php'; ?>
     </header>
     <main>
         <div class="form-container">
@@ -51,7 +51,7 @@ if (isset($_POST['soumettre'])) {
         </div>
     </main>
     <footer>
-        <?php include 'include/html/footer.html'; ?>
+        <?php require_once 'include\footer.php'; ?>
     </footer>
 </body>
 

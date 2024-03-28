@@ -20,7 +20,7 @@ $actualite = Actualite::getArticle();
 <body>
 
     <header>
-        <?php include 'include/html/header.html'; ?>
+        <?php require_once 'include\header.php'; ?>
     </header>
 
     <main>
@@ -46,7 +46,7 @@ $actualite = Actualite::getArticle();
     </main>
 
     <footer>
-        <?php include 'include/html/footer.html'; ?>
+        <?php require_once 'include\footer.php'; ?>
     </footer>
 </body>
 
