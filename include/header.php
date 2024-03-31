@@ -29,9 +29,10 @@
                 <?php
 
                 require_once 'Class/Menu.php';
+                Use \Class\Menu;
 
                 $menu = new Menu();
-                $menu->afficherMenu();
+                $menu->afficher();
                 ?>
                 <script>
                     function redirect(select) {

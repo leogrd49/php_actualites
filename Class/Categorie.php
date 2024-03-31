@@ -1,7 +1,13 @@
 <?php
+
+namespace Class;
+
 require_once 'Connexionbdd.php';
 
-class Categorie extends Connexionbdd{
+require_once './Interfaces/Affichable.php';
+Use Interfaces\Affichable;
+
+class Categorie extends Connexionbdd implements Affichable{
 
     public $values;
     public $id;
@@ -23,18 +29,14 @@ class Categorie extends Connexionbdd{
         return $this->nom;
     }
 
-    public static function getSousMenu(int $id):array{
-        $sql = "SELECT * FROM categorie WHERE categorie_id = $id";
-        return Connexionbdd::query($sql);
-    }
-
     public static function getCategorie(int $id):array{
         $sql = "SELECT * FROM categorie WHERE categorie_id is null";
 
         return Connexionbdd::query($sql);
     }
 
-    public function afficher_page(){
+    public function afficher(){
         echo "<li><a href=''>". $this->nom . "</a></li>";
     }
+
 }

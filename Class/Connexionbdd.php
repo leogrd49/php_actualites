@@ -1,11 +1,14 @@
 <?php
 
+namespace Class;
+
+
 class Connexionbdd
 {
 
     protected static function getPdo()
     {
-        $pdo = new PDO("mysql:host=127.0.0.1;dbname=actualite;charset=utf8mb4;port=3306", "root");
+        $pdo = new \PDO("mysql:host=127.0.0.1;dbname=actualite;charset=utf8mb4;port=3306", "root");
         return $pdo;
     }
 
@@ -16,7 +19,7 @@ class Connexionbdd
         return $temp;
     }
 
-    public static function afficher($sql)
+    public static function afficherSQL($sql)
     {
         $pdo = self::getPdo();
         $tempo = $pdo->prepare($sql);
@@ -32,7 +35,7 @@ class Connexionbdd
         }
         
         $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $data = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         
         return $data;
     }

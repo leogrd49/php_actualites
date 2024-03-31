@@ -1,8 +1,14 @@
 <?php
 
-require_once "Connexionbdd.php";
+namespace Class;
 
-class Menu extends Connexionbdd
+require_once 'Connexionbdd.php';
+
+require_once './Interfaces/Affichable.php';
+
+Use \Interfaces\Affichable;
+
+class Menu extends Connexionbdd implements Affichable
 {
 
     public $id;
@@ -24,7 +30,7 @@ class Menu extends Connexionbdd
 
         $selectOptions = '';
 
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        while ($row = $statement->fetch(\PDO::FETCH_ASSOC)) {
             $selectOptions .= '<option value="' . $row['id'] . '">' . $row['nom'] . '</option>';
         }
 
@@ -37,7 +43,7 @@ class Menu extends Connexionbdd
 
         $query = "SELECT id, nom FROM categorie WHERE categorie_id is null";
         $statement = $db->query($query);
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function getSubCategories($categoryId)
@@ -46,10 +52,10 @@ class Menu extends Connexionbdd
 
         $query = "SELECT id, nom FROM categorie WHERE categorie_id = :categoryId";
         $statement = $db->prepare($query);
-        $statement->bindParam(':categoryId', $categoryId, PDO::PARAM_INT);
+        $statement->bindParam(':categoryId', $categoryId, \PDO::PARAM_INT);
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function getAllCategorie()
@@ -58,11 +64,11 @@ class Menu extends Connexionbdd
 
         $query = "SELECT id, nom FROM categorie" ;
         $statement = $db->query($query);
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
 
     }
 
-    public function afficherMenu(){
+    public function afficher(){
         $menu = new Menu();
         $categories = $menu->getCategories();
     

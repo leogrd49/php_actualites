@@ -2,7 +2,9 @@
 include "include/connexion_base.php";
 session_start();
 
-require_once "Class/Actualite.php";
+require_once './Class/Actualite.php';
+Use \Class\Actualite;
+
 
 $actualite = Actualite::getArticle();
 ?>

@@ -1,6 +1,8 @@
 <?php
 include "include/connexion_base.php";
-require_once "Class/Contact.php";
+
+require_once './Class/Contact.php';
+Use \Class\Contact;
 
 session_start();
 

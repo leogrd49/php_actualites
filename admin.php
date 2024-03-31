@@ -8,9 +8,12 @@
 <?php 
 require_once 'include\header.php';
 
-require_once "Class/Connexionbdd.php";
-require_once "Class/Admin.php";
-require_once "Class/Menu.php";
+require_once './Class/Admin.php';
+require_once './Class/Menu.php';
+Use \Class\Admin;
+Use \Class\Menu;
+
+
 
 
 if (isset($_REQUEST['nom'], $_REQUEST['categorie_id'])){

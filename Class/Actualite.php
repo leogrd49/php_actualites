@@ -1,6 +1,9 @@
 <?php
 
-require_once "Connexionbdd.php";
+namespace Class;
+
+require_once 'Connexionbdd.php';
+
 
 class Actualite extends Connexionbdd
 {
@@ -38,7 +41,7 @@ class Actualite extends Connexionbdd
         $temp = Connexionbdd::getPdo()->prepare($sql);
         $temp->execute();
 
-        $data = $temp->fetchAll(PDO::FETCH_ASSOC);
+        $data = $temp->fetchAll(\PDO::FETCH_ASSOC);
 
         $actualites = [];
 
@@ -64,7 +67,7 @@ class Actualite extends Connexionbdd
             $stmt->execute();
 
             // Directly assign the fetched data to $actualites
-            $donnee_article = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $donnee_article = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
             foreach ($donnee_article as $values) {
                 $actualites[] = new Actualite($values);

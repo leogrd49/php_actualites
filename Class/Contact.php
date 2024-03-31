@@ -1,6 +1,9 @@
 <?php
 
-require_once "Connexionbdd.php";
+namespace Class;
+
+require_once 'Connexionbdd.php';
+
 
 class Contact extends Connexionbdd
 {
@@ -28,9 +31,9 @@ class Contact extends Connexionbdd
             }
 
             $temp = Connexionbdd::ajout($sql);
-            $temp->bindParam(":prenom", $contact->prenom, PDO::PARAM_STR);
-            $temp->bindParam(":nom", $contact->nom, PDO::PARAM_STR);
-            $temp->bindParam(":mail", $contact->mail, PDO::PARAM_STR);
+            $temp->bindParam(":prenom", $contact->prenom, \PDO::PARAM_STR);
+            $temp->bindParam(":nom", $contact->nom, \PDO::PARAM_STR);
+            $temp->bindParam(":mail", $contact->mail, \PDO::PARAM_STR);
 
             if ($temp->execute()) {
                 $_SESSION['validation'] = "Vos informations ont bien été enregistrées";
@@ -39,7 +42,7 @@ class Contact extends Connexionbdd
             } else {
                 echo "l'ajout d'un contact a échoué";
             }
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             echo "Error: " . $e->getMessage();
             exit();
         }

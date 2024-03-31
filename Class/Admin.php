@@ -1,6 +1,8 @@
 <?php
 
-require_once "Connexionbdd.php";
+namespace Class;
+
+require_once 'Connexionbdd.php';
 
 class Admin extends Connexionbdd {
 

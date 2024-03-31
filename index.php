@@ -1,8 +1,10 @@
 <?php
 
+require_once 'Class/Actualite.php';
+Use \Class\Actualite;
+
 include "include/connexion_base.php";
-require_once "Class/Actualite.php";
-require_once "Class/Menu.php";
+
 
 session_start();
 $actualite = Actualite::getListe();

@@ -1,6 +1,9 @@
 <?php
-require_once 'Class/Admin.php';
+
 require_once 'include\header.php';
+
+require_once './Class/Admin.php';
+Use \Class\Admin;
 
 $admin = new Admin();
 

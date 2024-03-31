@@ -1,10 +1,13 @@
 <?php
+require_once './Class/Menu.php';
+Use \Class\Menu;
 
-require_once "Class/Menu.php";
+require_once './Interfaces/Affichable.php';
+Use Interfaces\Affichable;
 
-class ComponantMenu {
+class ComponantMenu implements Affichable{
 
-    public function afficherMenu(){
+    public function afficher(){
         $menu = new Menu();
 
         $categories = $menu->getCategories();

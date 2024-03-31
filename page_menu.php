@@ -1,5 +1,12 @@
 <?php
-    require_once 'Class/Categorie.php';
+
+    require_once './Class/Categorie.php';
+    require_once './Class/SousCategorie.php';
+
+    Use \Class\Categorie;
+    Use \Class\SousCategorie;
+
+
 
     if (isset($_REQUEST['id'])) {
         $id = htmlentities($_REQUEST['id']);
@@ -9,7 +16,7 @@
         $affichage_categorie = new Categorie($res_categorie[0]);
 
         //Sous catégorie de la catégorie principale
-        $res_sous_categories = Categorie::getSousMenu($affichage_categorie->getId());
+        $res_sous_categories = SousCategorie::getSousCategorie($affichage_categorie->getId());
     }
 ?>
 <!DOCTYPE html>
@@ -33,7 +40,7 @@
             if (count($res_sous_categories) > 0) {
             for ($index = 0; $index < count($res_sous_categories); $index++){
                 $affichage_sous_categorie = new Categorie($res_sous_categories[$index]);
-                $affichage_sous_categorie->afficher_page();
+                $affichage_sous_categorie->afficher();
             }
         } else {
             echo "<h3>Aucune sous-catégorie.</h3>";
